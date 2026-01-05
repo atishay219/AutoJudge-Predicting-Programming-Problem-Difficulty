@@ -74,7 +74,7 @@ These metrics indicate reasonable performance for predicting difficulty scores u
 ### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/atishay219/AutoJudge-Predicting-Programming-Problem-Difficulty.git
-cd AutoJudge
+cd AutoJudge-Predicting-Programming-Problem-Difficulty
 ```
 
 ### 2️⃣ Install dependencies
