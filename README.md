@@ -137,7 +137,7 @@ The demo video demonstrates:
 - **Name:** Atishay Jain 
 - **Course:** B.TECH. Mechanical Enginering 
 - **Year:** 2
-- **Enrollment No.:** 24117030
+- **Enrolment No.:** 24117030
 - **Gmail ID:** atishay_j@me.iitr.ac.in
 
 
