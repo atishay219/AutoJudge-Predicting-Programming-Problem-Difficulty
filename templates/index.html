@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AutoJudge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="toggle" onclick="toggleDark()">
+        <span id="theme-icon">🌙</span>
+    </div>
+
+
+    <h1>🧠 AutoJudge</h1>
+
+    <form method="POST">
+        <label>Problem Description</label>
+        <textarea name="description" rows="6" required>{{ form_data.description }}</textarea>
+
+        <label>Input Description</label>
+        <textarea name="input_description" rows="4">{{ form_data.input_description }}</textarea>
+
+        <label>Output Description</label>
+        <textarea name="output_description" rows="4">{{ form_data.output_description }}</textarea>
+
+        <button type="submit">Predict Difficulty</button>
+
+        <button type="reset" class="reset-btn" onclick="window.location.href='/'">
+            Clear / Reset
+        </button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h2>Prediction Result</h2>
+
+        <p>
+            <strong>Difficulty Class:</strong>
+            <span class="{{ prediction.class }}">
+                {{ prediction.class | capitalize }}
+            </span>
+        </p>
+
+        <div class="bar">
+            <div class="fill {{ prediction.class }}-fill"
+                style="--progress: {{ prediction.score * 10 }}%; width: var(--progress);">
+            </div>
+        </div>
+
+        <p><strong>Difficulty Score:</strong> {{ prediction.score }}</p>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
